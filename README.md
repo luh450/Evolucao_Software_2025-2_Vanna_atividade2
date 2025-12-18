@@ -22,7 +22,9 @@ Mais do que automatizar tarefas, essa abordagem eleva o nível de maturidade do 
 ## Modelos
 `meta-llama/Meta-Llama-3.1-70B-Instruct`
 
-
+## Justificativa dos modelos escolhidos
+1. `meta-llama/Meta-Llama-3.1-70B-Instruct` : deve-se à sua alta capacidade de compreensão semântica, raciocínio contextual e seguimento de instruções complexas. Por se tratar de um modelo de grande porte (70B parâmetros), ele apresenta desempenho superior na identificação de padrões implícitos em textos técnicos, como estratégias de release e modelos de workflow, mesmo quando essas informações não estão explicitamente estruturadas. Além disso, o modelo é otimizado para tarefas instruction-following, o que o torna especialmente adequado para analisar descrições de processos, inferir fluxos de trabalho e classificar tipos de releases a partir de documentação e código-fonte.
+2. 
 
 ## Identificação de Tipos de Releases
 
