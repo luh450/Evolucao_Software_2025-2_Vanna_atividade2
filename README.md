@@ -55,7 +55,7 @@ Nenhuma evidência de deploy automático: Não há nenhuma evidência de que o p
 
 
 ##  Identificação de Tipos de Workflow
-
+### Perguntas padrões:
 1. Com base no uso de branches, pull requests e histórico de commits,  
    qual modelo de workflow o projeto mais se aproxima  
    (ex.: *GitHub Flow*, *Trunk-Based Development*, *GitFlow*)? 
