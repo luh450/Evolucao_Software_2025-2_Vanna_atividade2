@@ -3,6 +3,14 @@
 
 **Projeto analisado:** https://github.com/vanna-ai/vanna 
 
+
+## Integrantes
+Josias Ribeiro de Freitas Júnior - 202200025644
+Natalia Silva Santos - 202400018206
+Luzia dos Santos Souza Neta - 201700017537
+Anthony Amoz Santos Aragao - 202100011207
+
+
 ## Motivação
 À medida que os sistemas de software e modelos de IA evoluem, os processos de release e fluxo de trabalho tornam-se cada vez mais complexos, distribuídos e difíceis de padronizar. Decisões relacionadas a versionamento, validação, deploy e rollback costumam depender de conhecimento tácito, revisão manual e experiência individual, o que aumenta o risco operacional, a inconsistência entre equipes e o tempo de entrega.
 
