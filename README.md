@@ -326,7 +326,7 @@ Avalia se o modelo introduziu informações que não estão presentes no texto o
 | Modelo | Correção | Completude | Aderência | Precisão | Alucinação | Score Final |
 |------|----------|------------|-----------|----------|------------|-------------|
 | Qwen | 2 | 1 | 2 | 2 | 0 | 7 |
-| LLaMA | 2 | 2 | 2 | 2 | 0 | 8 |
+| LLaMA | 2 | 1 | 2 | 2 | 0 | 7 |
 | Google Gemma | 2 | 1 | 2 | 1 | 0 | 6 |
 
 
