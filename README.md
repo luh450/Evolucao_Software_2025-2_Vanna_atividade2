@@ -20,7 +20,7 @@ Mais do que automatizar tarefas, essa abordagem eleva o nível de maturidade do 
 
 
 
-## Tutorial
+## Tutorial no chathugging
 
 Todos os modelos utilizados neste trabalho foram executados por meio do ChatHugging (Hugging Face), que atua como interface para acesso e uso de modelos de linguagem pré-treinados. Essa abordagem permitiu testar modelos mais robustos e de grande porte sem a necessidade de utilizar um computador local com alto poder computacional.
 
@@ -34,6 +34,71 @@ São diversos modelos que podem ser utilizados. Só procurar o modelo que deseja
 
 Após selecionar já é possível utilizar o modelo
 
+## Tutorial em máquina local
+
+**Requisitos mínimos:**
+`meta-llama/Meta-Llama-3.1-70B-Instruct`
+- GPU: **≥ 140 GB de VRAM** (ex.: 2× A100 80GB ou equivalente)
+- RAM: **≥ 128 GB**
+- Armazenamento: **≥ 150 GB**
+- CUDA + drivers compatíveis
+- Frameworks: PyTorch + suporte a multi-GPU
+
+**link para notebook:** https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct/colab
+
+**Código**
+```python
+# Instalar dependências
+!pip install -q transformers accelerate torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+# Carregar tokenizer e modelo
+model_name = "meta-llama/Meta-Llama-3.1-70B-Instruct"
+
+tokenizer = AutoTokenizer.from_pretrained(
+    model_name,
+    trust_remote_code=True
+)
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype=torch.bfloat16,
+    device_map="auto",
+    trust_remote_code=True
+)
+```
+
+
+
+`Qwen/Qwen2.5-72B-Instruct`
+- GPU: **≥ 140 GB de VRAM**
+- RAM: **≥ 128 GB**
+- Armazenamento: **≥ 150 GB**
+- Suporte a paralelismo de modelo
+  
+**link para notebook:** https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/colab
+**Código**
+```python
+# Instalar dependências
+!pip install -q transformers accelerate torch
+
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+# Carregar tokenizer e modelo
+model_name = "Qwen/Qwen2.5-72B-Instruct"
+
+tokenizer = AutoTokenizer.from_pretrained(
+    model_name,
+    trust_remote_code=True
+)
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype=torch.float16,
+    device_map="auto",
+    trust_remote_code=True
+)
+```
 
 ## Modelos
 `meta-llama/Meta-Llama-3.1-70B-Instruct` : https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct
@@ -48,6 +113,30 @@ Após selecionar já é possível utilizar o modelo
 ### Perguntas padrões:
 1. **Analisando o repositório `vanna-ai/vanna`, que tipo(s) de estratégia de release o projeto aparenta utilizar  
    (ex.: *semantic versioning*, releases incrementais, release manual vs automatizado)? Justifique com evidências observáveis no repositório**
+
+
+## Análise de CI/CD e Estratégia de Release
+
+Com base nos workflows presentes no repositório (`tests.yml` e `python-publish.yaml`), é possível identificar a adoção de práticas de **Integração Contínua (CI)** e **Entrega Contínua (CD)** no projeto.
+
+#### Integração Contínua (CI)
+O arquivo `tests.yml` é responsável pela execução automática de testes a cada *push* ou *pull request*, garantindo que novas alterações no código não quebrem funcionalidades existentes. Essa prática caracteriza a integração contínua.
+
+```yaml
+on:
+  push:
+    branches:
+      - main
+```
+
+#### Entrega Contínua (CD)
+O workflow `python-publish.yaml` automatiza o processo de build e publicação do pacote Python, geralmente acionado por meio de *tags* ou *releases*. Isso indica a adoção de entrega contínua do pacote, permitindo que novas versões sejam disponibilizadas de forma controlada
+
+```yaml
+on:
+  release:
+    types: [published]
+```
 
 **Respostas**
 - `meta-llama/Meta-Llama-3.1-70B-Instruct`: O projeto vanna-ai/vanna utiliza o Semantic Versioning, com base nas seguintes evidências:
@@ -64,6 +153,21 @@ Automação Parcial: Usa GitHub Actions para CI/CD (testes, build).
 
 2. **O projeto `vanna-ai/vanna` está mais alinhado a um modelo de  
    *Continuous Delivery* ou *Continuous Deployment*? Explique com base no processo de publicação e integração contínua**
+
+  Arquivo `pyproject.toml`
+```
+   [project]
+version = "2.0.0rc1"
+```
+
+Seção `[project.optional-dependencies]`
+```
+[project.optional-dependencies]
+flask = ["flask>=2.0.0", "flask-cors>=4.0.0"]
+fastapi = ["fastapi>=0.68.0", "uvicorn>=0.15.0"]
+servers = ["vanna[flask,fastapi]"]
+```
+
 **Respostas**
 - `meta-llama/Meta-Llama-3.1-70B-Instruct`: Com base no processo de publicação e integração contínua, o projeto vanna-ai/vanna parece estar mais alinhado ao modelo de Continuous Delivery (CD).
 Evidências que apoiam esta afirmação incluem:
@@ -134,7 +238,7 @@ Ambiente de Desenvolvimento Documentado: O README.md e/ou CONTRIBUTING.md freque
 # Comparação de Modelos de IA  
 
 
-| Nº | Tema | Pergunta | `meta-llama/Meta-Llama-3.1-70B-Instruct` | Modelo B | Modelo C |
+| Nº | Tema | Pergunta | `meta-llama/Meta-Llama-3.1-70B-Instruct` | `Qwen/Qwen2.5-72B-Instruct` | Modelo C |
 |----|------|----------|----------|----------|----------|
 | 1 | Releases | Analisando o repositório `vanna-ai/vanna`, que tipo(s) de estratégia de release o projeto aparenta utilizar? | | | |
 | 2 | Releases | O projeto está mais alinhado a *Continuous Delivery* ou *Continuous Deployment*? Justifique. | | | |
