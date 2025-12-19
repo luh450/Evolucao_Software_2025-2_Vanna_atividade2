@@ -20,7 +20,7 @@ Mais do que automatizar tarefas, essa abordagem eleva o nível de maturidade do 
 
 
 
-## Tutorial
+## Tutorial no chathugging
 
 Todos os modelos utilizados neste trabalho foram executados por meio do ChatHugging (Hugging Face), que atua como interface para acesso e uso de modelos de linguagem pré-treinados. Essa abordagem permitiu testar modelos mais robustos e de grande porte sem a necessidade de utilizar um computador local com alto poder computacional.
 
@@ -34,6 +34,71 @@ São diversos modelos que podem ser utilizados. Só procurar o modelo que deseja
 
 Após selecionar já é possível utilizar o modelo
 
+## Tutorial em máquina local
+
+**Requisitos mínimos:**
+`meta-llama/Meta-Llama-3.1-70B-Instruct`
+- GPU: **≥ 140 GB de VRAM** (ex.: 2× A100 80GB ou equivalente)
+- RAM: **≥ 128 GB**
+- Armazenamento: **≥ 150 GB**
+- CUDA + drivers compatíveis
+- Frameworks: PyTorch + suporte a multi-GPU
+
+**link para notebook:** https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct/colab
+
+**Código**
+```python
+# Instalar dependências
+!pip install -q transformers accelerate torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+# Carregar tokenizer e modelo
+model_name = "meta-llama/Meta-Llama-3.1-70B-Instruct"
+
+tokenizer = AutoTokenizer.from_pretrained(
+    model_name,
+    trust_remote_code=True
+)
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype=torch.bfloat16,
+    device_map="auto",
+    trust_remote_code=True
+)
+```
+
+
+
+`Qwen/Qwen2.5-72B-Instruct`
+- GPU: **≥ 140 GB de VRAM**
+- RAM: **≥ 128 GB**
+- Armazenamento: **≥ 150 GB**
+- Suporte a paralelismo de modelo
+  
+**link para notebook:** https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/colab
+**Código**
+```python
+# Instalar dependências
+!pip install -q transformers accelerate torch
+
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+# Carregar tokenizer e modelo
+model_name = "Qwen/Qwen2.5-72B-Instruct"
+
+tokenizer = AutoTokenizer.from_pretrained(
+    model_name,
+    trust_remote_code=True
+)
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype=torch.float16,
+    device_map="auto",
+    trust_remote_code=True
+)
+```
 
 ## Modelos
 `meta-llama/Meta-Llama-3.1-70B-Instruct` : https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct
@@ -173,7 +238,7 @@ Ambiente de Desenvolvimento Documentado: O README.md e/ou CONTRIBUTING.md freque
 # Comparação de Modelos de IA  
 
 
-| Nº | Tema | Pergunta | `meta-llama/Meta-Llama-3.1-70B-Instruct` | Modelo B | Modelo C |
+| Nº | Tema | Pergunta | `meta-llama/Meta-Llama-3.1-70B-Instruct` | `Qwen/Qwen2.5-72B-Instruct` | Modelo C |
 |----|------|----------|----------|----------|----------|
 | 1 | Releases | Analisando o repositório `vanna-ai/vanna`, que tipo(s) de estratégia de release o projeto aparenta utilizar? | | | |
 | 2 | Releases | O projeto está mais alinhado a *Continuous Delivery* ou *Continuous Deployment*? Justifique. | | | |
