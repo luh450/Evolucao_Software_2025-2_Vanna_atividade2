@@ -19,6 +19,22 @@ Com isso, a organização passa a:
 Mais do que automatizar tarefas, essa abordagem eleva o nível de maturidade do processo, permitindo que equipes foquem em inovação enquanto a IA apoia decisões críticas de release com análise consistente, contextual e baseada em padrões consolidados.
 
 
+
+## Tutorial
+
+Todos os modelos utilizados neste trabalho foram executados por meio do ChatHugging (Hugging Face), que atua como interface para acesso e uso de modelos de linguagem pré-treinados. Essa abordagem permitiu testar modelos mais robustos e de grande porte sem a necessidade de utilizar um computador local com alto poder computacional.
+
+Acesse: https://huggingface.co/chat/
+
+Do lado inferior à esquerda é possivel selecionar o modelo a ser utilizado
+<img width="1484" height="857" alt="image" src="https://github.com/user-attachments/assets/7af9a0b5-ea23-4ad3-ba4f-9fe78cbf5fd4" />
+
+São diversos modelos que podem ser utilizados. Só procurar o modelo que deseja.
+<img width="1397" height="792" alt="image" src="https://github.com/user-attachments/assets/8ea99630-4f88-4e31-9b2c-dded4f01ecdb" />
+
+Após selecionar já é possível utilizar o modelo
+
+
 ## Modelos
 `meta-llama/Meta-Llama-3.1-70B-Instruct` : https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct
 `Qwen/Qwen2.5-72B-Instruct` : https://huggingface.co/Qwen/Qwen2.5-72B-Instruct
