@@ -30,8 +30,8 @@ Mais do que automatizar tarefas, essa abordagem eleva o nível de maturidade do 
 ## Identificação de Tipos de Releases
 
 ### Perguntas padrões:
-1. Analisando o repositório `vanna-ai/vanna`, que tipo(s) de estratégia de release o projeto aparenta utilizar  
-   (ex.: *semantic versioning*, releases incrementais, release manual vs automatizado)? Justifique com evidências observáveis no repositório.
+1. **Analisando o repositório `vanna-ai/vanna`, que tipo(s) de estratégia de release o projeto aparenta utilizar  
+   (ex.: *semantic versioning*, releases incrementais, release manual vs automatizado)? Justifique com evidências observáveis no repositório**
 
 **Respostas**
 - `meta-llama/Meta-Llama-3.1-70B-Instruct`: O projeto vanna-ai/vanna utiliza o Semantic Versioning, com base nas seguintes evidências:
@@ -46,8 +46,8 @@ Versionamento Semântico: As tags seguem o padrão vX.Y.Z (ex.: v0.3.0).
 Automação Parcial: Usa GitHub Actions para CI/CD (testes, build).
 
 
-2. O projeto `vanna-ai/vanna` está mais alinhado a um modelo de  
-   *Continuous Delivery* ou *Continuous Deployment*? Explique com base no processo de publicação e integração contínua
+2. **O projeto `vanna-ai/vanna` está mais alinhado a um modelo de  
+   *Continuous Delivery* ou *Continuous Deployment*? Explique com base no processo de publicação e integração contínua**
 **Respostas**
 - `meta-llama/Meta-Llama-3.1-70B-Instruct`: Com base no processo de publicação e integração contínua, o projeto vanna-ai/vanna parece estar mais alinhado ao modelo de Continuous Delivery (CD).
 Evidências que apoiam esta afirmação incluem:
@@ -59,8 +59,8 @@ Por quê?
 CI/CD Automatizado: Usa GitHub Actions para testes, build e geração de artefatos prontos para produção.
 Deploy Manual: A implantação final em produção ou publicação pública (ex.: no PyPI) requer uma ação manual explícita de um mantenedor. Não há automação para esta etapa decisiva.
 
-3. Observando o histórico de versões, o projeto realiza com maior frequência releases do tipo  
-   *major*, *minor* ou *patch*? O que isso indica sobre a estabilidade e maturidade do software?
+3. **Observando o histórico de versões, o projeto realiza com maior frequência releases do tipo  
+   *major*, *minor* ou *patch*? O que isso indica sobre a estabilidade e maturidade do software?**
 **Respostas**
 - `meta-llama/Meta-Llama-3.1-70B-Instruct`: Com base no histórico de versões do projeto vanna-ai/vanna, é possível observar que o projeto realiza com maior frequência releases do tipo patch. Isso indica que o projeto está em uma fase de desenvolvimento ativo e está focado em manter a estabilidade do software.
 - `Qwen/Qwen2.5-72B-Instruct`:  O projeto realiza mais releases do tipo patch. Isso indica um foco ativo na estabilidade (correções rápidas) e um desenvolvimento ágil, mas ainda não atingiu a maturidade completa (versão 0.x.y).
@@ -68,9 +68,9 @@ Deploy Manual: A implantação final em produção ou publicação pública (ex.
 
 ##  Identificação de Tipos de Workflow
 ### Perguntas padrões:
-1. Com base no uso de branches, pull requests e histórico de commits,  
+1. **Com base no uso de branches, pull requests e histórico de commits,  
    qual modelo de workflow o projeto mais se aproxima  
-   (ex.: *GitHub Flow*, *Trunk-Based Development*, *GitFlow*)? 
+   (ex.: *GitHub Flow*, *Trunk-Based Development*, *GitFlow*)?**
    
 **Respostas**
 - `meta-llama/Meta-Llama-3.1-70B-Instruct`: Com base no uso de branches, pull requests e histórico de commits, o projeto vanna-ai/vanna parece seguir o GitHub Flow.
@@ -86,8 +86,8 @@ Revisão via Pull Requests (PRs): As mudanças são sempre integradas à main at
 Implantação a partir da Main: A versão em main está sempre em estado implantável (confirmado pela existência de CI), alinhando-se com os princípios do GitHub Flow.
 
   
-2. O fluxo de desenvolvimento do `vanna-ai/vanna` é predominantemente  
-   orientado à automação (CI/CD) ou a validações manuais? Identifique indícios claros no repositório
+2. **O fluxo de desenvolvimento do `vanna-ai/vanna` é predominantemente  
+   orientado à automação (CI/CD) ou a validações manuais? Identifique indícios claros no repositório**
    
 **Respostas**
 - `meta-llama/Meta-Llama-3.1-70B-Instruct`: O fluxo de desenvolvimento do vanna-ai/vanna é predominantemente orientado à automação (CI/CD).
@@ -98,7 +98,7 @@ GitHub Actions: Presença de workflows (.github/workflows/) automatizando build,
 Gatilhos Automáticos: A execução desses pipelines é automática, não exigindo comando manual.
 PR Checks: Os status de CI são exigidos como verificação (check) obrigatória antes de um merge, embora a aprovação do PR seja manual.
   
-3. O workflow adotado favorece contribuições externas da comunidade open source?
+3. **O workflow adotado favorece contribuições externas da comunidade open source?**
 
 **Respostas**
 - `meta-llama/Meta-Llama-3.1-70B-Instruct`: O workflow adotado pelo projeto vanna-ai/vanna parece não favorecer contribuições externas da comunidade open source.
