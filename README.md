@@ -237,12 +237,56 @@ Ambiente de Desenvolvimento Documentado: O README.md e/ou CONTRIBUTING.md freque
 
 # Comparação de Modelos de IA  
 
+## Critérios de Avaliação das Respostas
 
-| Nº | Tema | Pergunta | `meta-llama/Meta-Llama-3.1-70B-Instruct` | `Qwen/Qwen2.5-72B-Instruct` | Modelo C |
-|----|------|----------|----------|----------|----------|
-| 1 | Releases | Analisando o repositório `vanna-ai/vanna`, que tipo(s) de estratégia de release o projeto aparenta utilizar? | | | |
-| 2 | Releases | O projeto está mais alinhado a *Continuous Delivery* ou *Continuous Deployment*? Justifique. | | | |
-| 3 | Releases | Os releases são majoritariamente *major*, *minor* ou *patch*? O que isso indica sobre a maturidade do projeto? | | | |
-| 4 | Workflow | Qual modelo de workflow o projeto mais se aproxima (*GitHub Flow*, *Trunk-Based*, *GitFlow*)? | | | |
-| 5 | Workflow | O fluxo de desenvolvimento é mais automatizado (CI/CD) ou manual? Quais evidências sustentam isso? | | | |
-| 6 | Workflow | O workflow favorece contribuições externas da comunidade open source? Explique. | | | |
+As respostas geradas pelos modelos de linguagem foram avaliadas com base nos seguintes critérios:
+
+### 1. Correção Conceitual
+Avalia se a resposta apresentada está tecnicamente correta em relação aos conceitos de *releases* e modelos de *workflow* de desenvolvimento de software.
+
+- **0** – Resposta incorreta  
+- **1** – Parcialmente correta  
+- **2** – Correta  
+
+---
+
+### 2. Completude
+Avalia o nível de abrangência da resposta, considerando se todos os elementos relevantes presentes no texto ou workflow analisado foram identificados.
+
+- **0** – Muito incompleta  
+- **1** – Parcial  
+- **2** – Completa  
+
+---
+
+### 3. Aderência ao Contexto
+Avalia se a resposta foi construída com base no conteúdo fornecido como entrada, evitando generalizações ou suposições não fundamentadas.
+
+- **0** – Genérica ou fora de contexto  
+- **1** – Parcialmente aderente  
+- **2** – Totalmente aderente  
+
+---
+
+### 4. Precisão Terminológica
+Avalia o uso adequado e consistente de termos técnicos relacionados a estratégias de *release* e modelos de *workflow*, como *Git Flow*, *Trunk-Based Development*, *Canary Release* e *CI/CD*.
+
+- **0** – Uso incorreto de terminologia  
+- **1** – Uso correto, porém superficial ou vago  
+- **2** – Uso correto e preciso  
+
+---
+
+### 5. Presença de Alucinações
+Avalia se o modelo introduziu informações que não estão presentes no texto ou que não podem ser inferidas a partir dele.
+
+- **0** – Nenhuma alucinação identificada  
+- **-1** – Alucinação leve  
+- **-2** – Alucinação grave
+
+- 
+| Modelo | Correção | Completude | Aderência | Precisão | Alucinação | Score Final |
+|------|----------|------------|-----------|----------|------------|-------------|
+| Qwen | 2 | 1 | 2 | 2 | 0 | 7 |
+| LLaMA | 2 | 2 | 2 | 2 | 0 | 8 |
+
