@@ -49,6 +49,30 @@ Após selecionar já é possível utilizar o modelo
 1. **Analisando o repositório `vanna-ai/vanna`, que tipo(s) de estratégia de release o projeto aparenta utilizar  
    (ex.: *semantic versioning*, releases incrementais, release manual vs automatizado)? Justifique com evidências observáveis no repositório**
 
+
+## Análise de CI/CD e Estratégia de Release
+
+Com base nos workflows presentes no repositório (`tests.yml` e `python-publish.yaml`), é possível identificar a adoção de práticas de **Integração Contínua (CI)** e **Entrega Contínua (CD)** no projeto.
+
+#### Integração Contínua (CI)
+O arquivo `tests.yml` é responsável pela execução automática de testes a cada *push* ou *pull request*, garantindo que novas alterações no código não quebrem funcionalidades existentes. Essa prática caracteriza a integração contínua.
+
+```yaml
+on:
+  push:
+    branches:
+      - main
+```
+
+#### Entrega Contínua (CD)
+O workflow `python-publish.yaml` automatiza o processo de build e publicação do pacote Python, geralmente acionado por meio de *tags* ou *releases*. Isso indica a adoção de entrega contínua do pacote, permitindo que novas versões sejam disponibilizadas de forma controlada
+
+```yaml
+on:
+  release:
+    types: [published]
+```
+
 **Respostas**
 - `meta-llama/Meta-Llama-3.1-70B-Instruct`: O projeto vanna-ai/vanna utiliza o Semantic Versioning, com base nas seguintes evidências:
 Convenção de nomenclatura de tags: vX.Y.Z
@@ -64,6 +88,21 @@ Automação Parcial: Usa GitHub Actions para CI/CD (testes, build).
 
 2. **O projeto `vanna-ai/vanna` está mais alinhado a um modelo de  
    *Continuous Delivery* ou *Continuous Deployment*? Explique com base no processo de publicação e integração contínua**
+
+  Arquivo `pyproject.toml`
+```
+   [project]
+version = "2.0.0rc1"
+```
+
+Seção `[project.optional-dependencies]`
+```
+[project.optional-dependencies]
+flask = ["flask>=2.0.0", "flask-cors>=4.0.0"]
+fastapi = ["fastapi>=0.68.0", "uvicorn>=0.15.0"]
+servers = ["vanna[flask,fastapi]"]
+```
+
 **Respostas**
 - `meta-llama/Meta-Llama-3.1-70B-Instruct`: Com base no processo de publicação e integração contínua, o projeto vanna-ai/vanna parece estar mais alinhado ao modelo de Continuous Delivery (CD).
 Evidências que apoiam esta afirmação incluem:
