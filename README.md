@@ -6,8 +6,11 @@
 
 ## Integrantes
 Josias Ribeiro de Freitas Júnior - 202200025644
+
 Natalia Silva Santos - 202400018206
+
 Luzia dos Santos Souza Neta - 201700017537
+
 Anthony Amoz Santos Aragao - 202100011207
 
 
@@ -110,6 +113,7 @@ model = AutoModelForCausalLM.from_pretrained(
 
 ## Modelos
 `meta-llama/Meta-Llama-3.1-70B-Instruct` : https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct
+
 `Qwen/Qwen2.5-72B-Instruct` : https://huggingface.co/Qwen/Qwen2.5-72B-Instruct
 
 ## Justificativa dos modelos escolhidos
