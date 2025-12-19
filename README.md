@@ -233,9 +233,18 @@ Documentação de Contribuição: Há um arquivo CONTRIBUTING.md que estabelece 
 Uso Estruturado de Issues e PRs: O projeto utiliza o sistema de Issues do GitHub para gerenciar bugs e discussões, e todas as mudanças são integradas via Pull Requests, que passam por revisão e checagens automáticas de CI. Este é um padrão bem compreendido pela comunidade open source.
 Ambiente de Desenvolvimento Documentado: O README.md e/ou CONTRIBUTING.md frequentemente inclui instruções para configurar o ambiente de desenvolvimento local, facilitando o início de novos contribuidores.
 
-## Conclusão
+# Conclusão
 
-# Comparação de Modelos de IA  
+A análise comparativa entre os modelos Qwen e LLaMA indicou que não houve diferenças significativas de desempenho na tarefa de identificação de estratégias de *release* e modelos de *workflow* a partir dos textos analisados.
+
+Ambos os modelos apresentaram níveis semelhantes de correção conceitual, completude e aderência ao contexto, sendo capazes de reconhecer os principais padrões de workflow e práticas de *release* descritos nos cenários avaliados. O uso da terminologia técnica também foi, em geral, consistente entre os dois modelos, com variações pontuais que não impactaram de forma relevante o resultado final da avaliação.
+
+No que se refere à presença de alucinações, observou-se um comportamento comparável entre os modelos, com baixa incidência de informações não suportadas pelo texto de entrada. As diferenças identificadas foram pontuais e não suficientes para caracterizar superioridade clara de um modelo em relação ao outro.
+
+Dessa forma, os resultados sugerem que tanto o *Qwen* quanto o *LLaMA* são adequados para tarefas de análise e classificação de workflows e estratégias de release, desde que aplicados em contextos semelhantes aos avaliados neste estudo. A escolha entre os modelos pode, portanto, considerar outros fatores, como custo computacional, disponibilidade, facilidade de integração e requisitos de infraestrutura, em vez de desempenho qualitativo das respostas.
+
+
+## Comparação de Modelos de IA  
 
 ## Critérios de Avaliação das Respostas
 
